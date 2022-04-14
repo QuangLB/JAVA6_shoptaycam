@@ -1,13 +1,19 @@
 package java6.shoptaycam.model;
 
-import javax.validation.constraints.Email;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
-public class Product {
-@NotNull
-@NotBlank
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class ProductModel {
+    @NotNull
+    @NotBlank
     private Integer id;
     @NotNull
     @NotBlank
@@ -24,5 +30,7 @@ public class Product {
     @NotNull
     private Boolean status;
     @NotNull
-    private Boolean role;
+    @NotBlank
+    private Integer brandId;
+
 }

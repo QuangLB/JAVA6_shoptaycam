@@ -31,8 +31,8 @@ public class ProductEntity {
     private Date createDate;
     @Column(name = "status")
     private Byte status;
-//    @Column(name = "brandId" , insertable = false, updatable = false)
-//    private int brandId;
+    @Column(name = "brandid" , insertable = false, updatable = false)
+    private int brandId;
 
     @ManyToOne
     @JoinColumn(name="brandid")
