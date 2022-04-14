@@ -20,6 +20,7 @@ public class BrandsEntity {
     private int id;
     @Column(name = "name")
     private String name;
+
     @JsonIgnore
     @OneToMany(mappedBy = "brand")
     List<ProductEntity> products;

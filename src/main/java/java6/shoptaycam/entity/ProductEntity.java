@@ -18,7 +18,7 @@ import java.util.List;
 public class ProductEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "id")
+    @Column(name = "id" , insertable = false, updatable = false)
     private int id;
     @Column(name = "name")
     private String name;
@@ -27,15 +27,15 @@ public class ProductEntity {
     @Column(name = "price")
     private Integer price;
     @Temporal(TemporalType.DATE)
-    @Column(name = "createDate")
+    @Column(name = "createdate")
     private Date createDate;
     @Column(name = "status")
     private Byte status;
-    @Column(name = "brandId")
-    private int brandId;
+//    @Column(name = "brandId" , insertable = false, updatable = false)
+//    private int brandId;
 
     @ManyToOne
-    @JoinColumn(name="brandsId")
+    @JoinColumn(name="brandid")
     BrandsEntity brand;
 
     @JsonIgnore
