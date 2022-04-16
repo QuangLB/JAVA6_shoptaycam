@@ -1,5 +1,7 @@
 package java6.shoptaycam.service.Implement;
 
+import java6.shoptaycam.dto.ProductModel;
+import java6.shoptaycam.dto.Response.Response;
 import java6.shoptaycam.entity.ProductEntity;
 import java6.shoptaycam.repository.ProductRepository;
 import java6.shoptaycam.service.ProductService;
@@ -104,11 +106,20 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public <S extends ProductEntity> ResponseEntity<S> save(S entity) {
-        if (productRepository.existsById(entity.getId())) {
-            return ResponseEntity.badRequest().build();
+    public Response save(ProductModel dto) {
+        Optional<ProductEntity> entityOptional = productRepository.findById(dto.getId());
+        if (entityOptional.isPresent()) {
+            return Response.validationException().setErrors("The id already exists");
         }
-        return ResponseEntity.ok(productRepository.save(entity));
+        ProductEntity entity = new ProductEntity()
+                .setId(dto.getId())
+                .setName(dto.getName())
+                .setPrice(dto.getPrice())
+                .setImg(dto.getImg())
+                .setCreateDate(dto.getCreateDate())
+                .setBrandId(dto.getBrandId());
+        System.out.println(dto.getBrandId());
+        return Response.ok().setPayload(productRepository.save(entity));
     }
 
     @Override
@@ -141,10 +152,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void deleteById(Integer integer) {
         Optional<ProductEntity> opt = productRepository.findById(integer);
-        if (opt.isPresent()){
+        if (opt.isPresent()) {
             productRepository.deleteById(integer);
-        }
-        else {
+        } else {
             ResponseEntity.notFound().build();
         }
     }

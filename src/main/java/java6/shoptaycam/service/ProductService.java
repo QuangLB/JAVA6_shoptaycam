@@ -1,5 +1,7 @@
 package java6.shoptaycam.service;
 
+import java6.shoptaycam.dto.ProductModel;
+import java6.shoptaycam.dto.Response.Response;
 import java6.shoptaycam.entity.ProductEntity;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
@@ -47,7 +49,7 @@ public interface ProductService {
 
     Page<ProductEntity> findAll(Pageable pageable);
 
-    <S extends ProductEntity> ResponseEntity<S> save(S entity);
+    Response save(ProductModel dto);
 
     <S extends ProductEntity> ResponseEntity<S> put(S entity);
 

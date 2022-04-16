@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -11,6 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 @Data
+@Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -31,11 +33,11 @@ public class ProductEntity {
     private Date createDate;
     @Column(name = "status")
     private Byte status;
-    @Column(name = "brandid" , insertable = false, updatable = false)
+    @Column(name = "brandid")
     private int brandId;
 
     @ManyToOne
-    @JoinColumn(name="brandid")
+    @JoinColumn(name="brandid", insertable = false, updatable = false)
     BrandsEntity brand;
 
     @JsonIgnore

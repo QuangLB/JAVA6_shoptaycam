@@ -1,6 +1,9 @@
 package java6.shoptaycam.controller;
 
+import java6.shoptaycam.dto.ProductModel;
+import java6.shoptaycam.dto.Response.Response;
 import java6.shoptaycam.entity.ProductEntity;
+import java6.shoptaycam.repository.ProductRepository;
 import java6.shoptaycam.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +27,7 @@ public class ProductRestController {
         return service.findById(id);
     }
     @PostMapping("")
-    public ResponseEntity<ProductEntity> post(@RequestBody ProductEntity product){
+    public Response post(@RequestBody ProductModel product){
         return service.save(product);
     }
     @PutMapping("/{id}")

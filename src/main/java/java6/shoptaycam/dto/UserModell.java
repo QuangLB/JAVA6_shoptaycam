@@ -1,36 +1,35 @@
-package java6.shoptaycam.model;
+package java6.shoptaycam.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductModel {
+public class UserModell {
     @NotNull
     @NotBlank
-    private Integer id;
+    private String username;
     @NotNull
     @NotBlank
-    private String name;
+    private String password;
     @NotNull
     @NotBlank
-    private String img;
+    private String fullname;
     @NotNull
     @NotBlank
-    private Integer price;
+    @Email
+    private String email;
     @NotNull
     @NotBlank
-    private Date createDate;
+    private String photo;
     @NotNull
     private Boolean status;
     @NotNull
-    @NotBlank
-    private Integer brandId;
-
+    private Boolean role;
 }

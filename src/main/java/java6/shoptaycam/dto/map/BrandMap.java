@@ -1,6 +1,6 @@
-package java6.shoptaycam.model.map;
+package java6.shoptaycam.dto.map;
 
-import java6.shoptaycam.model.BrandModel;
+import java6.shoptaycam.dto.BrandModel;
 
 import java.util.HashMap;
 

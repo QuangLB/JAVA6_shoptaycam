@@ -1,12 +1,9 @@
 package java6.shoptaycam.controller;
 
 import java6.shoptaycam.entity.BrandsEntity;
-import java6.shoptaycam.model.BrandModel;
-import java6.shoptaycam.model.map.BrandMap;
+import java6.shoptaycam.dto.BrandModel;
 import java6.shoptaycam.service.BrandService;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
