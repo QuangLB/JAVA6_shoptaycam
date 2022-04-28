@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserModell {
+public class UserModel {
     @NotNull
     @NotBlank
     private String username;

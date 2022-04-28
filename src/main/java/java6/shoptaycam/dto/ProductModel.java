@@ -35,5 +35,4 @@ public class ProductModel{
     @NotNull
     @NotBlank
     private Integer brandId;
-
 }

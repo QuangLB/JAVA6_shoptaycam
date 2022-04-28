@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 @Data
@@ -20,14 +19,14 @@ public class OrdersEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
-    private int id;
+    private Integer id;
     @Column(name = "username" , insertable = false, updatable = false)
     private String username;
     @Column(name = "address")
     private String address;
     @Temporal(TemporalType.DATE)
-    @Column(name = "createDate")
-    private Date createDate;
+    @Column(name = "createdate")
+    private Date createdate;
     @Column(name = "status")
     private Byte status;
 
