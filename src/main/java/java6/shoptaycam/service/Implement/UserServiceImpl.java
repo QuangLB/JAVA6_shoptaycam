@@ -23,6 +23,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResponseEntity<List<UserEntity>> findAll() {
+//        return ResponseEntity.ok(userRepository.findAll());
         return ResponseEntity.ok(userRepository.findAll());
     }
 

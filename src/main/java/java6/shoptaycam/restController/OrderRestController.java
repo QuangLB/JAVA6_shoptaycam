@@ -1,4 +1,4 @@
-package java6.shoptaycam.controller;
+package java6.shoptaycam.restController;
 
 import java6.shoptaycam.entity.OrdersEntity;
 import java6.shoptaycam.service.OrderService;

@@ -1,9 +1,8 @@
-package java6.shoptaycam.controller;
+package java6.shoptaycam.restController;
 
 import java6.shoptaycam.dto.ProductModel;
 import java6.shoptaycam.dto.Response.Response;
 import java6.shoptaycam.entity.ProductEntity;
-import java6.shoptaycam.repository.ProductRepository;
 import java6.shoptaycam.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
